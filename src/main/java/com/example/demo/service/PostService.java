@@ -9,11 +9,13 @@ import java.util.Date;
 
 @Service
 public class PostService {
+    private ArrayList<Post> _posts = new ArrayList<>();
+
     public ArrayList<Post> listAllPosts() {
-        ArrayList<Post> posts = new ArrayList<>();
-        posts.add(new Post("Первый постик", new Date()));
-        posts.add(new Post("Второй постик", new Date()));
-        posts.add(new Post("Третий постик", new Date()));
-        return posts;
+        return _posts;
+    }
+
+    public void create(String text) {
+        _posts.add(new Post(text, new Date()));
     }
 }
