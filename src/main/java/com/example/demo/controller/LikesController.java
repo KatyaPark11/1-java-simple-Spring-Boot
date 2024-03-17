@@ -15,7 +15,7 @@ public class LikesController {
     LikesService likesService;
 
     @ResponseBody
-    @RequestMapping(path = "/post/{id}/like", method = RequestMethod.POST)
+    @RequestMapping(path = "post/{id}/like", method = RequestMethod.POST)
     public String like(@PathVariable("id") Long id) {
         int likes = likesService.like(id);
         return "" + likes;
